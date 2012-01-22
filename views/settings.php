@@ -42,11 +42,11 @@ $url = 'https://' . $_SERVER['SERVER_ADDR'] . ':631/';
 // Show warning if not running
 ///////////////////////////////////////////////////////////////////////////////
 
-echo "<div id='server_not_running' style='display:FIXMEnone;'>";
+echo "<div id='server_not_running' style='display:none;'>";
 echo infobox_warning(lang('base_warning'), lang('print_server_management_tool_not_accessible'));
 echo "</div>";
 
-echo "<div id='server_running' style='display:FIXMEnone;'>";
+echo "<div id='server_running' style='display:none;'>";
 echo infobox_highlight(
     lang('print_server_management_tool'),
     lang('print_server_management_tool_help') . '<br><br>' .
