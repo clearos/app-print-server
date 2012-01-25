@@ -1,7 +1,8 @@
 
 Name: app-print-server
 Group: ClearOS/Apps
-Version: 6.2.0.beta3
+Epoch: 1
+Version: 1.0.1
 Release: 1%{dist}
 Summary: Advanced Print Server
 License: GPLv3
@@ -9,14 +10,14 @@ Packager: ClearFoundation
 Vendor: ClearFoundation
 Source: %{name}-%{version}.tar.gz
 Buildarch: noarch
-Requires: %{name}-core = %{version}-%{release}
+Requires: %{name}-core = 1:%{version}-%{release}
 Requires: app-base
 Requires: app-groups
 Requires: app-users
 Requires: app-network
 
 %description
-Print Server description...
+The Print Server app provides a common print interface to printers on the network.  This allows clients on the LAN to share print resources and eases administration into one centralized service.
 
 %package core
 Summary: Advanced Print Server - APIs and install
@@ -31,7 +32,7 @@ Requires: cups >= 1.4.2
 Requires: csplugin-filewatch
 
 %description core
-Print Server description...
+The Print Server app provides a common print interface to printers on the network.  This allows clients on the LAN to share print resources and eases administration into one centralized service.
 
 This package provides the core API and libraries.
 
