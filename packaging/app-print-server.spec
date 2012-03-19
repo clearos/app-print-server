@@ -26,7 +26,7 @@ Requires: app-certificate-manager-core
 Requires: app-groups
 Requires: app-print-server-plugin-core
 Requires: app-users
-Requires: cups >= 1.4.2
+Requires: cups >= 1.4.2-44.v6.1
 Requires: csplugin-filewatch
 
 %description core
@@ -43,9 +43,13 @@ mkdir -p -m 755 %{buildroot}/usr/clearos/apps/print_server
 cp -r * %{buildroot}/usr/clearos/apps/print_server/
 
 install -d -m 0755 %{buildroot}/etc/clearos/print_server.d
+install -d -m 0775 %{buildroot}/var/cache/cups
 install -d -m 0755 %{buildroot}/var/clearos/print_server
 install -d -m 0755 %{buildroot}/var/clearos/print_server/backup/
 install -D -m 0644 packaging/cups.php %{buildroot}/var/clearos/base/daemon/cups.php
+install -D -m 0644 packaging/cupsd.listen.conf %{buildroot}/etc/cups/cupsd.listen.conf
+install -D -m 0644 packaging/cupsd.location.conf %{buildroot}/etc/cups/cupsd.location.conf
+install -D -m 0644 packaging/cupsd.policy.conf %{buildroot}/etc/cups/cupsd.policy.conf
 install -D -m 0644 packaging/filewatch-print-server-configuration.conf %{buildroot}/etc/clearsync.d/filewatch-print-server-configuration.conf
 install -D -m 0644 packaging/filewatch-print-server-network.conf %{buildroot}/etc/clearsync.d/filewatch-print-server-network.conf
 
@@ -88,11 +92,15 @@ exit 0
 %exclude /usr/clearos/apps/print_server/tests
 %dir /usr/clearos/apps/print_server
 %dir /etc/clearos/print_server.d
+%dir %attr(0775,root,lp) /var/cache/cups
 %dir /var/clearos/print_server
 %dir /var/clearos/print_server/backup/
 /usr/clearos/apps/print_server/deploy
 /usr/clearos/apps/print_server/language
 /usr/clearos/apps/print_server/libraries
 /var/clearos/base/daemon/cups.php
+%config(noreplace) /etc/cups/cupsd.listen.conf
+/etc/cups/cupsd.location.conf
+/etc/cups/cupsd.policy.conf
 /etc/clearsync.d/filewatch-print-server-configuration.conf
 /etc/clearsync.d/filewatch-print-server-network.conf

@@ -44,7 +44,7 @@ $app['core_requires'] = array(
     'app-groups',
     'app-print-server-plugin-core',
     'app-users',
-    'cups >= 1.4.2',
+    'cups >= 1.4.2-44.v6.1',
     'csplugin-filewatch',
 );
 
@@ -52,10 +52,21 @@ $app['core_directory_manifest'] = array(
     '/etc/clearos/print_server.d' => array(),
     '/var/clearos/print_server' => array(),
     '/var/clearos/print_server/backup/' => array(),
+    '/var/cache/cups' => array(
+        'mode' => '0775',
+        'group' => 'lp',
+    ),
 );
 
 $app['core_file_manifest'] = array(
     'cups.php'=> array('target' => '/var/clearos/base/daemon/cups.php'),
+    'cupsd.listen.conf'=> array(
+        'target' => '/etc/cups/cupsd.listen.conf',
+        'config' => TRUE,
+        'config_params' => 'noreplace'
+    ),
+    'cupsd.location.conf'=> array('target' => '/etc/cups/cupsd.location.conf'),
+    'cupsd.policy.conf'=> array('target' => '/etc/cups/cupsd.policy.conf'),
     'filewatch-print-server-configuration.conf'=> array('target' => '/etc/clearsync.d/filewatch-print-server-configuration.conf'),
     'filewatch-print-server-network.conf'=> array('target' => '/etc/clearsync.d/filewatch-print-server-network.conf'),
 );
