@@ -1,3 +1,9 @@
 #!/bin/sh
 
 [ -x /usr/clearos/apps/print_server/deploy/syncaction ] && /usr/clearos/apps/print_server/deploy/syncaction
+
+# Reload clearsyncd
+#------------------
+
+/sbin/service clearsyncd condrestart >/dev/null 2>&1
+
