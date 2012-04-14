@@ -1,7 +1,7 @@
 
 Name: app-print-server
 Epoch: 1
-Version: 1.0.10
+Version: 1.1.0
 Release: 1%{dist}
 Summary: Advanced Print Server
 License: GPLv3
@@ -18,7 +18,7 @@ Requires: app-network
 The Print Server app provides a common print interface to printers on the network.  This allows clients on the LAN to share print resources and eases administration into one centralized service.
 
 %package core
-Summary: Advanced Print Server - APIs and install
+Summary: Advanced Print Server - Core
 License: LGPLv3
 Group: ClearOS/Libraries
 Requires: app-base-core
