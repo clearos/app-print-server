@@ -70,3 +70,9 @@ $app['core_file_manifest'] = array(
     'filewatch-print-server-configuration.conf'=> array('target' => '/etc/clearsync.d/filewatch-print-server-configuration.conf'),
     'filewatch-print-server-network.conf'=> array('target' => '/etc/clearsync.d/filewatch-print-server-network.conf'),
 );
+
+$app['delete_dependency'] = array(
+    'app-print-server-core',
+    'app-print-server-plugin-core',
+    'cups'
+);
