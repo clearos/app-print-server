@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'print_server';
-$app['version'] = '1.1.0';
+$app['version'] = '1.4.35';
 $app['release'] = '1';
 $app['vendor'] = 'ClearFoundation';
 $app['packager'] = 'ClearFoundation';
@@ -46,6 +46,7 @@ $app['core_requires'] = array(
     'app-users',
     'cups >= 1.4.2-44.v6.1',
     'csplugin-filewatch',
+    'foomatic',
 );
 
 $app['core_directory_manifest'] = array(

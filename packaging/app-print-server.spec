@@ -1,7 +1,7 @@
 
 Name: app-print-server
 Epoch: 1
-Version: 1.1.0
+Version: 1.4.35
 Release: 1%{dist}
 Summary: Advanced Print Server
 License: GPLv3
@@ -28,6 +28,7 @@ Requires: app-print-server-plugin-core
 Requires: app-users
 Requires: cups >= 1.4.2-44.v6.1
 Requires: csplugin-filewatch
+Requires: foomatic
 
 %description core
 The Print Server app provides a common print interface to printers on the network.  This allows clients on the LAN to share print resources and eases administration into one centralized service.
