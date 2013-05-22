@@ -3,9 +3,9 @@
 /**
  * Print server settings controller.
  *
- * @category   Apps
- * @package    Print_Server
- * @subpackage Controllers
+ * @category   apps
+ * @package    print-server
+ * @subpackage controllers
  * @author     ClearFoundation <developer@clearfoundation.com>
  * @copyright  2011 ClearFoundation
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License version 3 or later
@@ -36,9 +36,9 @@
 /**
  * Print server settings controller.
  *
- * @category   Apps
- * @package    Print_Server
- * @subpackage Controllers
+ * @category   apps
+ * @package    print-server
+ * @subpackage controllers
  * @author     ClearFoundation <developer@clearfoundation.com>
  * @copyright  2011 ClearFoundation
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License version 3 or later
