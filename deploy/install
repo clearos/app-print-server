@@ -1,3 +1,12 @@
 #!/bin/sh
 
 [ -x /usr/clearos/apps/print_server/deploy/syncaction ] && /usr/clearos/apps/print_server/deploy/syncaction
+
+# Set default start/boot
+#-----------------------
+
+logger -p local6.notice -t installer "app-print-server-core - enabling CUPS print server"
+chkconfig cups on
+
+logger -p local6.notice -t installer "app-print-server-core - starting CUPS print server"
+service cups start
