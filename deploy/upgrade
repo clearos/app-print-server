@@ -38,7 +38,7 @@ if [ ! -s "$CRT" ]; then
     chmod 640 $CRT
 fi
 
-# Sync action: updates configuration using clearsync hook
+# Update print server configuration based on network info
 #--------------------------------------------------------
 
-/usr/clearos/apps/print_server/deploy/syncaction
+/var/clearos/events/network_configuration/print_server

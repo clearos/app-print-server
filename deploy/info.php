@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'print_server';
-$app['version'] = '1.6.0';
+$app['version'] = '1.6.1';
 $app['release'] = '1';
 $app['vendor'] = 'ClearFoundation';
 $app['packager'] = 'ClearFoundation';
@@ -41,9 +41,11 @@ $app['requires'] = array(
 
 $app['core_requires'] = array(
     'app-certificate-manager-core',
-    'app-groups',
+    'app-events-core',
+    'app-groups-core',
+    'app-network-core >= 1:1.6.0',
     'app-print-server-plugin-core',
-    'app-users',
+    'app-users-core',
     'cups >= 1.4.2-44.v6.1',
     'csplugin-filewatch',
     'foomatic',
@@ -60,6 +62,11 @@ $app['core_directory_manifest'] = array(
 );
 
 $app['core_file_manifest'] = array(
+    'print_server.conf' => array (
+        'target' => '/etc/clearos/print_server.conf',
+        'config' => TRUE,
+        'config_params' => 'noreplace',
+    ),
     'network-configuration-event'=> array(
         'target' => '/var/clearos/events/network_configuration/print_server',
         'mode' => '0755'
