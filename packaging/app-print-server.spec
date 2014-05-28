@@ -1,7 +1,7 @@
 
 Name: app-print-server
 Epoch: 1
-Version: 1.5.5
+Version: 1.6.0
 Release: 1%{dist}
 Summary: Advanced Print Server
 License: GPLv3
@@ -52,7 +52,7 @@ install -D -m 0644 packaging/cupsd.listen.conf %{buildroot}/etc/cups/cupsd.liste
 install -D -m 0644 packaging/cupsd.location.conf %{buildroot}/etc/cups/cupsd.location.conf
 install -D -m 0644 packaging/cupsd.policy.conf %{buildroot}/etc/cups/cupsd.policy.conf
 install -D -m 0644 packaging/filewatch-print-server-configuration.conf %{buildroot}/etc/clearsync.d/filewatch-print-server-configuration.conf
-install -D -m 0644 packaging/filewatch-print-server-network.conf %{buildroot}/etc/clearsync.d/filewatch-print-server-network.conf
+install -D -m 0755 packaging/network-configuration-event %{buildroot}/var/clearos/events/network_configuration/print_server
 
 %post
 logger -p local6.notice -t installer 'app-print-server - installing'
@@ -90,7 +90,6 @@ exit 0
 %files core
 %defattr(-,root,root)
 %exclude /usr/clearos/apps/print_server/packaging
-%exclude /usr/clearos/apps/print_server/tests
 %dir /usr/clearos/apps/print_server
 %dir /etc/clearos/print_server.d
 %dir %attr(0775,root,lp) /var/cache/cups
@@ -104,4 +103,4 @@ exit 0
 /etc/cups/cupsd.location.conf
 /etc/cups/cupsd.policy.conf
 /etc/clearsync.d/filewatch-print-server-configuration.conf
-/etc/clearsync.d/filewatch-print-server-network.conf
+/var/clearos/events/network_configuration/print_server

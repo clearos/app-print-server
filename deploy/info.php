@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'print_server';
-$app['version'] = '1.5.5';
+$app['version'] = '1.6.0';
 $app['release'] = '1';
 $app['vendor'] = 'ClearFoundation';
 $app['packager'] = 'ClearFoundation';
@@ -60,16 +60,19 @@ $app['core_directory_manifest'] = array(
 );
 
 $app['core_file_manifest'] = array(
-    'cups.php'=> array('target' => '/var/clearos/base/daemon/cups.php'),
+    'network-configuration-event'=> array(
+        'target' => '/var/clearos/events/network_configuration/print_server',
+        'mode' => '0755'
+    ),
     'cupsd.listen.conf'=> array(
         'target' => '/etc/cups/cupsd.listen.conf',
         'config' => TRUE,
         'config_params' => 'noreplace'
     ),
+    'cups.php'=> array('target' => '/var/clearos/base/daemon/cups.php'),
     'cupsd.location.conf'=> array('target' => '/etc/cups/cupsd.location.conf'),
     'cupsd.policy.conf'=> array('target' => '/etc/cups/cupsd.policy.conf'),
     'filewatch-print-server-configuration.conf'=> array('target' => '/etc/clearsync.d/filewatch-print-server-configuration.conf'),
-    'filewatch-print-server-network.conf'=> array('target' => '/etc/clearsync.d/filewatch-print-server-network.conf'),
 );
 
 $app['delete_dependency'] = array(
