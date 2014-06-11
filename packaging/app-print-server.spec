@@ -49,6 +49,7 @@ install -d -m 0755 %{buildroot}/etc/clearos/print_server.d
 install -d -m 0775 %{buildroot}/var/cache/cups
 install -d -m 0755 %{buildroot}/var/clearos/print_server
 install -d -m 0755 %{buildroot}/var/clearos/print_server/backup/
+install -D -m 0755 packaging/accounts-event %{buildroot}/var/clearos/events/accounts/print_server
 install -D -m 0644 packaging/cups.php %{buildroot}/var/clearos/base/daemon/cups.php
 install -D -m 0644 packaging/cupsd.listen.conf %{buildroot}/etc/cups/cupsd.listen.conf
 install -D -m 0644 packaging/cupsd.location.conf %{buildroot}/etc/cups/cupsd.location.conf
@@ -101,6 +102,7 @@ exit 0
 /usr/clearos/apps/print_server/deploy
 /usr/clearos/apps/print_server/language
 /usr/clearos/apps/print_server/libraries
+/var/clearos/events/accounts/print_server
 /var/clearos/base/daemon/cups.php
 %config(noreplace) /etc/cups/cupsd.listen.conf
 /etc/cups/cupsd.location.conf

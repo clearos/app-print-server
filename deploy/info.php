@@ -67,6 +67,10 @@ $app['core_file_manifest'] = array(
         'config' => TRUE,
         'config_params' => 'noreplace',
     ),
+    'accounts-event'=> array(
+        'target' => '/var/clearos/events/accounts/print_server',
+        'mode' => '0755'
+    ),
     'network-configuration-event'=> array(
         'target' => '/var/clearos/events/network_configuration/print_server',
         'mode' => '0755'
