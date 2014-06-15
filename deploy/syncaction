@@ -1,0 +1,13 @@
+#!/bin/sh
+
+grep "^<Printer" /etc/cups/printers.conf | sort > /var/clearos/print_server/printer_check.new
+
+if ! diff -q /var/clearos/print_server/printer_check.new /var/clearos/print_server/printer_check; then
+    logger -p local6.notice -t installer "print_server - detected new printer"
+    mv /var/clearos/print_server/printer_check.new /var/clearos/print_server/printer_check
+    /sbin/service smb condrestart 2>/dev/null
+else 
+    rm /var/clearos/print_server/printer_check.new
+fi
+
+

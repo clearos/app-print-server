@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'print_server';
-$app['version'] = '1.6.2';
+$app['version'] = '1.6.5';
 $app['release'] = '1';
 $app['vendor'] = 'ClearFoundation';
 $app['packager'] = 'ClearFoundation';
@@ -84,6 +84,7 @@ $app['core_file_manifest'] = array(
     'cupsd.location.conf'=> array('target' => '/etc/cups/cupsd.location.conf'),
     'cupsd.policy.conf'=> array('target' => '/etc/cups/cupsd.policy.conf'),
     'filewatch-print-server-configuration.conf'=> array('target' => '/etc/clearsync.d/filewatch-print-server-configuration.conf'),
+    'filewatch-print-server-printers.conf'=> array('target' => '/etc/clearsync.d/filewatch-print-server-printers.conf'),
 );
 
 $app['delete_dependency'] = array(
