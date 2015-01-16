@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'print_server';
-$app['version'] = '2.0.5';
+$app['version'] = '2.0.14';
 $app['release'] = '1';
 $app['vendor'] = 'ClearFoundation';
 $app['packager'] = 'ClearFoundation';
@@ -19,7 +19,7 @@ $app['description'] = lang('print_server_app_description');
 
 $app['name'] = lang('print_server_app_name');
 $app['category'] = lang('base_category_server');
-$app['subcategory'] = lang('base_subcategory_file');
+$app['subcategory'] = lang('base_subcategory_print');
 
 /////////////////////////////////////////////////////////////////////////////
 // Controllers
