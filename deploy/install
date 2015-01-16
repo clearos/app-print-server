@@ -6,7 +6,7 @@
 #-----------------------
 
 logger -p local6.notice -t installer "app-print-server-core - enabling CUPS print server"
-chkconfig cups on
+chkconfig cups on >/dev/null 2>&1
 
 logger -p local6.notice -t installer "app-print-server-core - starting CUPS print server"
-service cups start
+service cups start >/dev/null 2>&1
