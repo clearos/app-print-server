@@ -21,7 +21,6 @@ $configlet = array(
     'title' => lang('print_server_app_name'),
     'package' => 'cups',
     'process_name' => 'cupsd',
-    'pid_file' => '/var/run/cupsd.pid',
     'reloadable' => FALSE,
     'url' => '/app/print_server'
 );
