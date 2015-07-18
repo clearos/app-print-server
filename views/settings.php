@@ -46,12 +46,14 @@ echo "<div id='server_not_running' style='display:none;'>";
 echo infobox_warning(lang('base_warning'), lang('print_server_management_tool_not_accessible'));
 echo "</div>";
 
+$options['buttons'] = array(
+    anchor_custom($url, lang('print_server_go_to_management_tool'), 'high', array('target' => '_blank'))
+);
+
 echo "<div id='server_running' style='display:none;'>";
 echo infobox_highlight(
     lang('print_server_management_tool'),
-    lang('print_server_management_tool_help') . '<br><br>' .
-    "<p align='center'>" .  
-    anchor_custom($url, lang('print_server_go_to_management_tool'), 'high', array('target' => '_blank')) . 
-    "</p>"
+    lang('print_server_management_tool_help'),
+    $options
 );
 echo "</div>";
