@@ -1,7 +1,7 @@
 
 Name: app-print-server
 Epoch: 1
-Version: 2.1.6
+Version: 2.1.14
 Release: 1%{dist}
 Summary: Advanced Print Server
 License: GPLv3
