@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'print_server';
-$app['version'] = '2.1.14';
+$app['version'] = '2.1.15';
 $app['release'] = '1';
 $app['vendor'] = 'ClearFoundation';
 $app['packager'] = 'ClearFoundation';
@@ -73,6 +73,10 @@ $app['core_file_manifest'] = array(
     ),
     'network-configuration-event'=> array(
         'target' => '/var/clearos/events/network_configuration/print_server',
+        'mode' => '0755'
+    ),
+    'network-connnected-event'=> array(
+        'target' => '/var/clearos/events/network_connected/print_server',
         'mode' => '0755'
     ),
     'cupsd.listen.conf'=> array(
