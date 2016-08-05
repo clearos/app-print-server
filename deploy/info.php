@@ -75,7 +75,7 @@ $app['core_file_manifest'] = array(
         'target' => '/var/clearos/events/network_configuration/print_server',
         'mode' => '0755'
     ),
-    'network-connnected-event'=> array(
+    'network-connected-event'=> array(
         'target' => '/var/clearos/events/network_connected/print_server',
         'mode' => '0755'
     ),
