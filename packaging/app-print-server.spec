@@ -57,7 +57,7 @@ install -D -m 0644 packaging/cupsd.policy.conf %{buildroot}/etc/cups/cupsd.polic
 install -D -m 0644 packaging/filewatch-print-server-configuration.conf %{buildroot}/etc/clearsync.d/filewatch-print-server-configuration.conf
 install -D -m 0644 packaging/filewatch-print-server-printers.conf %{buildroot}/etc/clearsync.d/filewatch-print-server-printers.conf
 install -D -m 0755 packaging/network-configuration-event %{buildroot}/var/clearos/events/network_configuration/print_server
-install -D -m 0755 packaging/network-connnected-event %{buildroot}/var/clearos/events/network_connected/print_server
+install -D -m 0755 packaging/network-connected-event %{buildroot}/var/clearos/events/network_connected/print_server
 install -D -m 0644 packaging/print_server.conf %{buildroot}/etc/clearos/print_server.conf
 
 %post
