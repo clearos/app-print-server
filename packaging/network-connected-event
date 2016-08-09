@@ -1,3 +1,0 @@
-#!/bin/sh
-
-/usr/bin/systemctl condrestart cups.service >/dev/null 2>&1
