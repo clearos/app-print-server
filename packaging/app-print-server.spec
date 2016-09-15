@@ -1,7 +1,7 @@
 
 Name: app-print-server
 Epoch: 1
-Version: 2.1.16
+Version: 2.3.0
 Release: 1%{dist}
 Summary: Advanced Print Server
 License: GPLv3
@@ -23,7 +23,7 @@ License: LGPLv3
 Group: ClearOS/Libraries
 Requires: app-base-core
 Requires: app-certificate-manager-core
-Requires: app-events-core
+Requires: app-events-core >= 1:2.3.0
 Requires: app-groups-core
 Requires: app-network-core >= 1:1.6.0
 Requires: app-print-server-plugin-core
@@ -57,6 +57,7 @@ install -D -m 0644 packaging/cupsd.policy.conf %{buildroot}/etc/cups/cupsd.polic
 install -D -m 0644 packaging/filewatch-print-server-configuration.conf %{buildroot}/etc/clearsync.d/filewatch-print-server-configuration.conf
 install -D -m 0644 packaging/filewatch-print-server-printers.conf %{buildroot}/etc/clearsync.d/filewatch-print-server-printers.conf
 install -D -m 0755 packaging/network-configuration-event %{buildroot}/var/clearos/events/network_configuration/print_server
+install -D -m 0755 packaging/onboot-event %{buildroot}/var/clearos/events/onboot/print_server
 install -D -m 0644 packaging/print_server.conf %{buildroot}/etc/clearos/print_server.conf
 
 %post
@@ -111,4 +112,5 @@ exit 0
 /etc/clearsync.d/filewatch-print-server-configuration.conf
 /etc/clearsync.d/filewatch-print-server-printers.conf
 /var/clearos/events/network_configuration/print_server
+/var/clearos/events/onboot/print_server
 %config(noreplace) /etc/clearos/print_server.conf

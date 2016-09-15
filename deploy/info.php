@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'print_server';
-$app['version'] = '2.1.16';
+$app['version'] = '2.3.0';
 $app['release'] = '1';
 $app['vendor'] = 'ClearFoundation';
 $app['packager'] = 'ClearFoundation';
@@ -41,7 +41,7 @@ $app['requires'] = array(
 
 $app['core_requires'] = array(
     'app-certificate-manager-core',
-    'app-events-core',
+    'app-events-core >= 1:2.3.0',
     'app-groups-core',
     'app-network-core >= 1:1.6.0',
     'app-print-server-plugin-core',
@@ -73,6 +73,10 @@ $app['core_file_manifest'] = array(
     ),
     'network-configuration-event'=> array(
         'target' => '/var/clearos/events/network_configuration/print_server',
+        'mode' => '0755'
+    ),
+    'onboot-event'=> array(
+        'target' => '/var/clearos/events/onboot/print_server',
         'mode' => '0755'
     ),
     'cupsd.listen.conf'=> array(

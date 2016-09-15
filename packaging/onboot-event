@@ -1,0 +1,13 @@
+#!/bin/sh
+
+BIND_OK=`netstat -anp | grep ":631.*LISTEN[[:space:]]*.*cups" | egrep -v '(127.0.0.1|::1)'`
+
+if [ -z "$BIND_OK" ]; then
+    logger -p local6.notice -t events "print-server - rebinding"
+
+    # Run the network configuration event for good measure
+    /var/clearos/events/network_configuration/print_server
+
+    # Restart cups
+    /sbin/service cups condrestart >/dev/null 2>&1
+fi
